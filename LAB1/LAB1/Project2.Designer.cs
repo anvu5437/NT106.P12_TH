@@ -37,6 +37,7 @@
             DelBtn = new Button();
             ExtBtn = new Button();
             OPDisplay = new RichTextBox();
+            bt_back = new Button();
             SuspendLayout();
             // 
             // label1
@@ -129,11 +130,22 @@
             OPDisplay.Text = "";
             OPDisplay.TextChanged += OPDisplay_TextChanged;
             // 
+            // bt_back
+            // 
+            bt_back.Location = new Point(12, 11);
+            bt_back.Name = "bt_back";
+            bt_back.Size = new Size(48, 29);
+            bt_back.TabIndex = 18;
+            bt_back.Text = "Back\r\n\r\n";
+            bt_back.UseVisualStyleBackColor = true;
+            bt_back.Click += button1_Click;
+            // 
             // Project2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(770, 450);
+            Controls.Add(bt_back);
             Controls.Add(OPDisplay);
             Controls.Add(ExtBtn);
             Controls.Add(DelBtn);
@@ -160,5 +172,6 @@
         private Button DelBtn;
         private Button ExtBtn;
         private RichTextBox OPDisplay;
+        private Button bt_back;
     }
 }

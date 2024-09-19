@@ -101,5 +101,12 @@ namespace LAB1
         {
 
         }
+
+        private void bt_back_Click(object sender, EventArgs e)
+        {
+            MainMenu mainMenu = (MainMenu)Application.OpenForms["MainMenu"];
+            mainMenu.Show();
+            this.Close();
+        }
     }
 }

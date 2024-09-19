@@ -101,7 +101,8 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "MainMenu";
-            Text = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "LAB1";
             ResumeLayout(false);
         }
 

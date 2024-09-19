@@ -16,5 +16,12 @@ namespace LAB1
         {
             InitializeComponent();
         }
+
+        private void bt_back_Click(object sender, EventArgs e)
+        {
+            MainMenu mainMenu = (MainMenu)Application.OpenForms["MainMenu"];
+            mainMenu.Show();
+            this.Close();
+        }
     }
 }

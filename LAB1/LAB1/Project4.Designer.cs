@@ -34,6 +34,7 @@
             btnCalc = new Button();
             button1 = new Button();
             button2 = new Button();
+            bt_back = new Button();
             SuspendLayout();
             // 
             // label
@@ -96,11 +97,22 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += Exit_Click;
             // 
+            // bt_back
+            // 
+            bt_back.Location = new Point(3, 1);
+            bt_back.Name = "bt_back";
+            bt_back.Size = new Size(48, 29);
+            bt_back.TabIndex = 20;
+            bt_back.Text = "Back\r\n\r\n";
+            bt_back.UseVisualStyleBackColor = true;
+            bt_back.Click += bt_back_Click;
+            // 
             // Project4
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(469, 251);
+            Controls.Add(bt_back);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(btnCalc);
@@ -121,5 +133,6 @@
         private Button btnCalc;
         private Button button1;
         private Button button2;
+        private Button bt_back;
     }
 }

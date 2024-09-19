@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LAB1
@@ -139,6 +140,13 @@ namespace LAB1
         private void txtB_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainMenu mainMenu = (MainMenu)Application.OpenForms["MainMenu"];
+            mainMenu.Show();
+            this.Close();
         }
     }
 }
