@@ -114,10 +114,15 @@ namespace LAB1
         private int CalculateSum(int A, int B)
         {
             int sum = 0;
-            for (int i = A; i <= B; i++)
+            int currentPower = 1;
+
+            // Tính tổng S = A^1 + A^2 + ... + A^B
+            for (int i = 1; i <= B; i++)
             {
-                sum += i;
+                currentPower *= A;  // A^i
+                sum += currentPower;
             }
+
             return sum;
         }
 

@@ -42,9 +42,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(100, 77);
+            label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(57, 51);
             label1.Name = "label1";
-            label1.Size = new Size(59, 20);
+            label1.Size = new Size(78, 25);
             label1.TabIndex = 0;
             label1.Text = "Insert A";
             label1.Click += InsA;
@@ -52,16 +53,17 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(100, 145);
+            label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(58, 108);
             label2.Name = "label2";
-            label2.Size = new Size(58, 20);
+            label2.Size = new Size(77, 25);
             label2.TabIndex = 1;
             label2.Text = "Insert B";
             label2.Click += InsB;
             // 
             // txtB
             // 
-            txtB.Location = new Point(194, 145);
+            txtB.Location = new Point(165, 106);
             txtB.Name = "txtB";
             txtB.Size = new Size(125, 27);
             txtB.TabIndex = 2;
@@ -69,7 +71,7 @@
             // 
             // txtA
             // 
-            txtA.Location = new Point(194, 77);
+            txtA.Location = new Point(165, 49);
             txtA.Name = "txtA";
             txtA.Size = new Size(125, 27);
             txtA.TabIndex = 3;
@@ -78,7 +80,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(484, 114);
+            comboBox1.Location = new Point(58, 191);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(257, 28);
             comboBox1.TabIndex = 4;
@@ -87,7 +89,8 @@
             // 
             // CalBtn
             // 
-            CalBtn.Location = new Point(100, 286);
+            CalBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CalBtn.Location = new Point(58, 251);
             CalBtn.Name = "CalBtn";
             CalBtn.Size = new Size(135, 29);
             CalBtn.TabIndex = 5;
@@ -97,7 +100,8 @@
             // 
             // DelBtn
             // 
-            DelBtn.Location = new Point(347, 286);
+            DelBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DelBtn.Location = new Point(58, 297);
             DelBtn.Name = "DelBtn";
             DelBtn.Size = new Size(135, 29);
             DelBtn.TabIndex = 6;
@@ -107,7 +111,8 @@
             // 
             // ExtBtn
             // 
-            ExtBtn.Location = new Point(590, 286);
+            ExtBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ExtBtn.Location = new Point(57, 344);
             ExtBtn.Name = "ExtBtn";
             ExtBtn.Size = new Size(135, 29);
             ExtBtn.TabIndex = 7;
@@ -117,9 +122,9 @@
             // 
             // OPDisplay
             // 
-            OPDisplay.Location = new Point(100, 347);
+            OPDisplay.Location = new Point(456, 12);
             OPDisplay.Name = "OPDisplay";
-            OPDisplay.Size = new Size(641, 94);
+            OPDisplay.Size = new Size(307, 426);
             OPDisplay.TabIndex = 8;
             OPDisplay.Text = "";
             OPDisplay.TextChanged += OPDisplay_TextChanged;
@@ -128,7 +133,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(831, 450);
+            ClientSize = new Size(770, 450);
             Controls.Add(OPDisplay);
             Controls.Add(ExtBtn);
             Controls.Add(DelBtn);
