@@ -37,6 +37,7 @@
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.None;
             button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(12, 12);
             button1.Name = "button1";
@@ -48,6 +49,7 @@
             // 
             // button2
             // 
+            button2.Anchor = AnchorStyles.None;
             button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.Location = new Point(148, 214);
             button2.Name = "button2";
@@ -59,6 +61,7 @@
             // 
             // button3
             // 
+            button3.Anchor = AnchorStyles.None;
             button3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.Location = new Point(290, 123);
             button3.Name = "button3";
@@ -70,6 +73,7 @@
             // 
             // button4
             // 
+            button4.Anchor = AnchorStyles.None;
             button4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.Location = new Point(12, 123);
             button4.Name = "button4";
@@ -81,6 +85,7 @@
             // 
             // button5
             // 
+            button5.Anchor = AnchorStyles.None;
             button5.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button5.Location = new Point(290, 12);
             button5.Name = "button5";

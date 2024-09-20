@@ -48,6 +48,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(bt_back);
             Name = "Project5";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Project5";
             ResumeLayout(false);
         }

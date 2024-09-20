@@ -108,5 +108,10 @@ namespace LAB1
             mainMenu.Show();
             this.Close();
         }
+
+        private void Project4_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

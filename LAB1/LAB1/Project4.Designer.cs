@@ -39,6 +39,7 @@
             // 
             // label
             // 
+            label.Anchor = AnchorStyles.None;
             label.AutoSize = true;
             label.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label.Location = new Point(36, 33);
@@ -50,6 +51,7 @@
             // 
             // txtBirthdate
             // 
+            txtBirthdate.Anchor = AnchorStyles.None;
             txtBirthdate.Location = new Point(275, 30);
             txtBirthdate.Name = "txtBirthdate";
             txtBirthdate.Size = new Size(165, 27);
@@ -58,6 +60,7 @@
             // 
             // txtResult
             // 
+            txtResult.Anchor = AnchorStyles.None;
             txtResult.Location = new Point(275, 154);
             txtResult.Name = "txtResult";
             txtResult.Size = new Size(165, 27);
@@ -66,6 +69,7 @@
             // 
             // btnCalc
             // 
+            btnCalc.Anchor = AnchorStyles.None;
             btnCalc.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             btnCalc.Location = new Point(293, 77);
             btnCalc.Name = "btnCalc";
@@ -77,6 +81,7 @@
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.None;
             button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(72, 204);
             button1.Name = "button1";
@@ -88,6 +93,7 @@
             // 
             // button2
             // 
+            button2.Anchor = AnchorStyles.None;
             button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.Location = new Point(312, 205);
             button2.Name = "button2";
@@ -120,7 +126,9 @@
             Controls.Add(txtBirthdate);
             Controls.Add(label);
             Name = "Project4";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Project4";
+            Load += Project4_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -47,6 +47,7 @@
             // 
             // lb_num1
             // 
+            lb_num1.Anchor = AnchorStyles.None;
             lb_num1.AutoSize = true;
             lb_num1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lb_num1.Location = new Point(12, 124);
@@ -58,17 +59,18 @@
             // 
             // Title
             // 
-            Title.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            Title.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Title.Location = new Point(181, 60);
+            Title.Anchor = AnchorStyles.None;
+            Title.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Title.Location = new Point(12, 44);
             Title.Name = "Title";
-            Title.Size = new Size(436, 20);
+            Title.Size = new Size(778, 41);
             Title.TabIndex = 1;
             Title.Text = "Find the largest and smallest numbers among three numbers";
             Title.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lb_num2
             // 
+            lb_num2.Anchor = AnchorStyles.None;
             lb_num2.AutoSize = true;
             lb_num2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lb_num2.Location = new Point(269, 124);
@@ -81,6 +83,7 @@
             // 
             // lb_num3
             // 
+            lb_num3.Anchor = AnchorStyles.None;
             lb_num3.AutoSize = true;
             lb_num3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lb_num3.Location = new Point(547, 124);
@@ -92,6 +95,7 @@
             // 
             // tb_num1
             // 
+            tb_num1.Anchor = AnchorStyles.None;
             tb_num1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tb_num1.Location = new Point(126, 119);
             tb_num1.Name = "tb_num1";
@@ -101,6 +105,7 @@
             // 
             // tb_num3
             // 
+            tb_num3.Anchor = AnchorStyles.None;
             tb_num3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tb_num3.Location = new Point(665, 120);
             tb_num3.Name = "tb_num3";
@@ -109,6 +114,7 @@
             // 
             // tb_num2
             // 
+            tb_num2.Anchor = AnchorStyles.None;
             tb_num2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tb_num2.Location = new Point(390, 119);
             tb_num2.Name = "tb_num2";
@@ -118,6 +124,7 @@
             // 
             // bt1_Find
             // 
+            bt1_Find.Anchor = AnchorStyles.None;
             bt1_Find.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bt1_Find.Location = new Point(148, 241);
             bt1_Find.Name = "bt1_Find";
@@ -130,6 +137,7 @@
             // 
             // bt_Delete
             // 
+            bt_Delete.Anchor = AnchorStyles.None;
             bt_Delete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bt_Delete.Location = new Point(347, 241);
             bt_Delete.Name = "bt_Delete";
@@ -141,6 +149,7 @@
             // 
             // bt_Exit
             // 
+            bt_Exit.Anchor = AnchorStyles.None;
             bt_Exit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bt_Exit.Location = new Point(557, 241);
             bt_Exit.Name = "bt_Exit";
@@ -152,6 +161,7 @@
             // 
             // Max
             // 
+            Max.Anchor = AnchorStyles.None;
             Max.AutoSize = true;
             Max.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Max.Location = new Point(148, 364);
@@ -164,6 +174,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(488, 364);
@@ -176,6 +187,7 @@
             // 
             // tb_max
             // 
+            tb_max.Anchor = AnchorStyles.None;
             tb_max.Location = new Point(212, 364);
             tb_max.Name = "tb_max";
             tb_max.Size = new Size(125, 27);
@@ -184,6 +196,7 @@
             // 
             // tb_min
             // 
+            tb_min.Anchor = AnchorStyles.None;
             tb_min.Location = new Point(548, 365);
             tb_min.Name = "tb_min";
             tb_min.Size = new Size(125, 27);
@@ -221,7 +234,9 @@
             Controls.Add(Title);
             Controls.Add(lb_num1);
             Name = "Project1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Project1";
+            Load += Project1_Load;
             ResumeLayout(false);
             PerformLayout();
         }

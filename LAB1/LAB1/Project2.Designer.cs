@@ -42,6 +42,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(57, 51);
@@ -53,6 +54,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(58, 108);
@@ -64,6 +66,7 @@
             // 
             // txtB
             // 
+            txtB.Anchor = AnchorStyles.None;
             txtB.Location = new Point(165, 106);
             txtB.Name = "txtB";
             txtB.Size = new Size(125, 27);
@@ -72,6 +75,7 @@
             // 
             // txtA
             // 
+            txtA.Anchor = AnchorStyles.None;
             txtA.Location = new Point(165, 49);
             txtA.Name = "txtA";
             txtA.Size = new Size(125, 27);
@@ -80,6 +84,7 @@
             // 
             // comboBox1
             // 
+            comboBox1.Anchor = AnchorStyles.None;
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(58, 191);
             comboBox1.Name = "comboBox1";
@@ -90,6 +95,7 @@
             // 
             // CalBtn
             // 
+            CalBtn.Anchor = AnchorStyles.None;
             CalBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             CalBtn.Location = new Point(58, 251);
             CalBtn.Name = "CalBtn";
@@ -101,6 +107,7 @@
             // 
             // DelBtn
             // 
+            DelBtn.Anchor = AnchorStyles.None;
             DelBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DelBtn.Location = new Point(58, 297);
             DelBtn.Name = "DelBtn";
@@ -112,6 +119,7 @@
             // 
             // ExtBtn
             // 
+            ExtBtn.Anchor = AnchorStyles.None;
             ExtBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ExtBtn.Location = new Point(57, 344);
             ExtBtn.Name = "ExtBtn";
@@ -123,6 +131,7 @@
             // 
             // OPDisplay
             // 
+            OPDisplay.Anchor = AnchorStyles.None;
             OPDisplay.Location = new Point(456, 12);
             OPDisplay.Name = "OPDisplay";
             OPDisplay.Size = new Size(307, 426);
@@ -156,6 +165,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Project2";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Project2";
             ResumeLayout(false);
             PerformLayout();

@@ -103,5 +103,10 @@ namespace LAB1
 
             return words.Trim();
         }
+
+        private void lb_pronouce_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
