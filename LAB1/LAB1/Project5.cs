@@ -16,5 +16,16 @@ namespace LAB1
         {
             InitializeComponent();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewComboBoxColumn comboBoxColumn = new DataGridViewComboBoxColumn();
+            comboBoxColumn.Name = "Phai";
+            comboBoxColumn.HeaderText = "Gender";
+            comboBoxColumn.Items.AddRange("Male", "Female");
+            comboBoxColumn.Items.AddRange("Male", "Female");
+            dataGridView1.Columns.Add(comboBoxColumn);
+
+        }
     }
 }
