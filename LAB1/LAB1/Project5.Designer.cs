@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             user = new GroupBox();
             GioiTinh = new ComboBox();
             diem3 = new Label();
@@ -252,11 +253,26 @@
             Del.Text = "Dlt";
             Del.ToolTipText = "Del";
             Del.Width = 125;
+
+            bt_back = new Button();
+            SuspendLayout();
+            // 
+            // bt_back
+            // 
+            bt_back.Location = new Point(12, 12);
+            bt_back.Name = "bt_back";
+            bt_back.Size = new Size(48, 29);
+            bt_back.TabIndex = 21;
+            bt_back.Text = "Back\r\n\r\n";
+            bt_back.UseVisualStyleBackColor = true;
+
+
             // 
             // Project5
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+
             ClientSize = new Size(1079, 585);
             Controls.Add(dataGridView1);
             Controls.Add(user);
@@ -265,6 +281,12 @@
             user.ResumeLayout(false);
             user.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+
+            ClientSize = new Size(800, 450);
+            Controls.Add(bt_back);
+            Name = "Project5";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Project5";
             ResumeLayout(false);
         }
 
@@ -293,5 +315,7 @@
         private DataGridViewTextBoxColumn P3;
         private DataGridViewComboBoxColumn xeploai;
         private DataGridViewButtonColumn Del;
+
+        private Button bt_back;
     }
 }

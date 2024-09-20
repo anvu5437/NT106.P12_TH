@@ -25,7 +25,13 @@ namespace LAB1
             comboBoxColumn.Items.AddRange("Male", "Female");
             comboBoxColumn.Items.AddRange("Male", "Female");
             dataGridView1.Columns.Add(comboBoxColumn);
-
         }
+            private void bt_back_Click(object sender, EventArgs e)
+            {
+                MainMenu mainMenu = (MainMenu)Application.OpenForms["MainMenu"];
+                mainMenu.Show();
+                this.Close();
+            }
+        }
+
     }
-}
