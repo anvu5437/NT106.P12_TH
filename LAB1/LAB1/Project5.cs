@@ -28,33 +28,6 @@ namespace LAB1
                 dataGridView1[e.ColumnIndex, e.RowIndex] = genderCell;
             }
 
-            // Kiểm tra nếu người dùng nhấp vào cột xếp loại (Rank)
-            if (e.ColumnIndex == dataGridView1.Columns["rank"].Index && e.RowIndex >= 0)
-            {
-                // Lấy điểm các môn học từ các ô tương ứng
-                double project1Score = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["P1"].Value);
-                double project2Score = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["P2"].Value);
-                double project3Score = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["P3"].Value);
-
-                // Tính điểm trung bình
-                double averageScore = (project1Score + project2Score + project3Score) / 3;
-
-                // Xếp loại dựa trên điểm trung bình và điều kiện
-                string rank;
-                if (averageScore >= 8 && project1Score >= 6.5 && project2Score >= 6.5 && project3Score >= 6.5)
-                    rank = "Very Good";
-                else if (averageScore >= 6.5 && project1Score >= 5 && project2Score >= 5 && project3Score >= 5)
-                    rank = "Good";
-                else if (averageScore >= 5 && project1Score >= 3.5 && project2Score >= 3.5 && project3Score >= 3.5)
-                    rank = "Average";
-                else if (averageScore >= 3.5 && project1Score >= 2 && project2Score >= 2 && project3Score >= 2)
-                    rank = "Weak";
-                else
-                    rank = "Poor";
-
-                // Cập nhật giá trị xếp loại vào ô tương ứng
-                dataGridView1.Rows[e.RowIndex].Cells["rank"].Value = rank;
-            }
             if (e.RowIndex >= 0)
             {
                 // Xác nhận xóa hàng
@@ -65,12 +38,6 @@ namespace LAB1
                 }
             }
         }
-        //private void bt_back_Click(object sender, EventArgs e)
-        //{
-        // MainMenu mainMenu = (MainMenu)Application.OpenForms["MainMenu"];
-        //mainMenu.Show();
-        //this.Close();
-        //}
 
         private void bt_back_Click_1(object sender, EventArgs e)
         {
