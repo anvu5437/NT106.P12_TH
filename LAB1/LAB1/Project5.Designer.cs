@@ -29,46 +29,46 @@
         private void InitializeComponent()
         {
             user = new GroupBox();
-            GioiTinh = new ComboBox();
-            diem3 = new Label();
-            diem2 = new Label();
-            diem1 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            save = new TextBox();
-            delete = new TextBox();
-            textBox5 = new TextBox();
-            mon2 = new TextBox();
-            mon1 = new TextBox();
-            hovaten = new TextBox();
+            delete = new Button();
+            save = new Button();
+            MorFM = new ComboBox();
+            point3 = new Label();
+            point2 = new Label();
+            point1 = new Label();
+            gender = new Label();
+            Fname = new Label();
+            Pj5 = new TextBox();
+            Pj2 = new TextBox();
+            Pj1 = new TextBox();
+            allname = new TextBox();
             dataGridView1 = new DataGridView();
+            bt_back = new Button();
             Number = new DataGridViewTextBoxColumn();
             name = new DataGridViewTextBoxColumn();
             Phai = new DataGridViewTextBoxColumn();
             P1 = new DataGridViewTextBoxColumn();
             P2 = new DataGridViewTextBoxColumn();
             P3 = new DataGridViewTextBoxColumn();
-            xeploai = new DataGridViewComboBoxColumn();
+            rank = new DataGridViewTextBoxColumn();
             Del = new DataGridViewButtonColumn();
-            bt_back = new Button();
             user.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // user
             // 
-            user.Controls.Add(GioiTinh);
-            user.Controls.Add(diem3);
-            user.Controls.Add(diem2);
-            user.Controls.Add(diem1);
-            user.Controls.Add(label2);
-            user.Controls.Add(label1);
-            user.Controls.Add(save);
             user.Controls.Add(delete);
-            user.Controls.Add(textBox5);
-            user.Controls.Add(mon2);
-            user.Controls.Add(mon1);
-            user.Controls.Add(hovaten);
+            user.Controls.Add(save);
+            user.Controls.Add(MorFM);
+            user.Controls.Add(point3);
+            user.Controls.Add(point2);
+            user.Controls.Add(point1);
+            user.Controls.Add(gender);
+            user.Controls.Add(Fname);
+            user.Controls.Add(Pj5);
+            user.Controls.Add(Pj2);
+            user.Controls.Add(Pj1);
+            user.Controls.Add(allname);
             user.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             user.Location = new Point(18, 29);
             user.Name = "user";
@@ -77,121 +77,134 @@
             user.TabStop = false;
             user.Text = "User";
             // 
-            // GioiTinh
+            // delete
             // 
-            GioiTinh.FormattingEnabled = true;
-            GioiTinh.Items.AddRange(new object[] { "Male", "Female" });
-            GioiTinh.Location = new Point(182, 117);
-            GioiTinh.Name = "GioiTinh";
-            GioiTinh.Size = new Size(151, 36);
-            GioiTinh.TabIndex = 12;
-            // 
-            // diem3
-            // 
-            diem3.AutoSize = true;
-            diem3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            diem3.Location = new Point(436, 205);
-            diem3.Name = "diem3";
-            diem3.Size = new Size(140, 20);
-            diem3.TabIndex = 11;
-            diem3.Text = "Score of project 3 :";
-            // 
-            // diem2
-            // 
-            diem2.AutoSize = true;
-            diem2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            diem2.Location = new Point(436, 133);
-            diem2.Name = "diem2";
-            diem2.Size = new Size(140, 20);
-            diem2.TabIndex = 10;
-            diem2.Text = "Score of project 2 :";
-            // 
-            // diem1
-            // 
-            diem1.AutoSize = true;
-            diem1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            diem1.Location = new Point(436, 62);
-            diem1.Name = "diem1";
-            diem1.Size = new Size(140, 20);
-            diem1.TabIndex = 9;
-            diem1.Text = "Score of project 1 :";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(93, 133);
-            label2.Name = "label2";
-            label2.Size = new Size(68, 20);
-            label2.TabIndex = 8;
-            label2.Text = "Gender :";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(60, 62);
-            label1.Name = "label1";
-            label1.Size = new Size(101, 20);
-            label1.TabIndex = 7;
-            label1.Text = "FULL NAME :";
+            delete.Location = new Point(106, 254);
+            delete.Name = "delete";
+            delete.Size = new Size(94, 37);
+            delete.TabIndex = 22;
+            delete.Text = "Delete";
+            delete.UseVisualStyleBackColor = true;
+            delete.Click += delete_Click;
             // 
             // save
             // 
             save.Location = new Point(6, 254);
             save.Name = "save";
-            save.Size = new Size(83, 34);
-            save.TabIndex = 6;
+            save.Size = new Size(94, 37);
+            save.TabIndex = 13;
             save.Text = "Save";
-            save.TextAlign = HorizontalAlignment.Center;
+            save.UseVisualStyleBackColor = true;
+            save.Click += save_Click;
             // 
-            // delete
+            // MorFM
             // 
-            delete.Location = new Point(123, 254);
-            delete.Name = "delete";
-            delete.Size = new Size(78, 34);
-            delete.TabIndex = 5;
-            delete.Text = "Delete";
-            delete.TextAlign = HorizontalAlignment.Center;
+            MorFM.FormattingEnabled = true;
+            MorFM.Items.AddRange(new object[] { "Male", "Female" });
+            MorFM.Location = new Point(182, 117);
+            MorFM.Name = "MorFM";
+            MorFM.Size = new Size(151, 36);
+            MorFM.TabIndex = 12;
             // 
-            // textBox5
+            // point3
             // 
-            textBox5.Location = new Point(594, 191);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 34);
-            textBox5.TabIndex = 4;
+            point3.AutoSize = true;
+            point3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            point3.Location = new Point(436, 205);
+            point3.Name = "point3";
+            point3.Size = new Size(140, 20);
+            point3.TabIndex = 11;
+            point3.Text = "Score of project 3 :";
             // 
-            // mon2
+            // point2
             // 
-            mon2.Location = new Point(594, 119);
-            mon2.Name = "mon2";
-            mon2.Size = new Size(125, 34);
-            mon2.TabIndex = 3;
+            point2.AutoSize = true;
+            point2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            point2.Location = new Point(436, 133);
+            point2.Name = "point2";
+            point2.Size = new Size(140, 20);
+            point2.TabIndex = 10;
+            point2.Text = "Score of project 2 :";
             // 
-            // mon1
+            // point1
             // 
-            mon1.Location = new Point(594, 47);
-            mon1.Name = "mon1";
-            mon1.Size = new Size(125, 34);
-            mon1.TabIndex = 2;
+            point1.AutoSize = true;
+            point1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            point1.Location = new Point(436, 62);
+            point1.Name = "point1";
+            point1.Size = new Size(140, 20);
+            point1.TabIndex = 9;
+            point1.Text = "Score of project 1 :";
             // 
-            // hovaten
+            // gender
             // 
-            hovaten.Location = new Point(182, 47);
-            hovaten.Name = "hovaten";
-            hovaten.Size = new Size(125, 34);
-            hovaten.TabIndex = 0;
+            gender.AutoSize = true;
+            gender.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            gender.Location = new Point(93, 133);
+            gender.Name = "gender";
+            gender.Size = new Size(68, 20);
+            gender.TabIndex = 8;
+            gender.Text = "Gender :";
+            // 
+            // Fname
+            // 
+            Fname.AutoSize = true;
+            Fname.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Fname.Location = new Point(60, 62);
+            Fname.Name = "Fname";
+            Fname.Size = new Size(101, 20);
+            Fname.TabIndex = 7;
+            Fname.Text = "FULL NAME :";
+            // 
+            // Pj5
+            // 
+            Pj5.Location = new Point(594, 191);
+            Pj5.Name = "Pj5";
+            Pj5.Size = new Size(125, 34);
+            Pj5.TabIndex = 4;
+            // 
+            // Pj2
+            // 
+            Pj2.Location = new Point(594, 119);
+            Pj2.Name = "Pj2";
+            Pj2.Size = new Size(125, 34);
+            Pj2.TabIndex = 3;
+            // 
+            // Pj1
+            // 
+            Pj1.Location = new Point(594, 47);
+            Pj1.Name = "Pj1";
+            Pj1.Size = new Size(125, 34);
+            Pj1.TabIndex = 2;
+            // 
+            // allname
+            // 
+            allname.Location = new Point(182, 47);
+            allname.Name = "allname";
+            allname.Size = new Size(125, 34);
+            allname.TabIndex = 0;
+            allname.TextAlign = HorizontalAlignment.Center;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Number, name, Phai, P1, P2, P3, xeploai, Del });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Number, name, Phai, P1, P2, P3, rank, Del });
             dataGridView1.Location = new Point(18, 344);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1054, 229);
+            dataGridView1.Size = new Size(1061, 229);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // bt_back
+            // 
+            bt_back.Location = new Point(3, 0);
+            bt_back.Name = "bt_back";
+            bt_back.Size = new Size(48, 29);
+            bt_back.TabIndex = 21;
+            bt_back.Text = "Back\r\n\r\n";
+            bt_back.UseVisualStyleBackColor = true;
+            bt_back.Click += bt_back_Click_1;
             // 
             // Number
             // 
@@ -237,12 +250,14 @@
             P3.Name = "P3";
             P3.Width = 125;
             // 
-            // xeploai
+            // rank
             // 
-            xeploai.HeaderText = "Rank";
-            xeploai.MinimumWidth = 6;
-            xeploai.Name = "xeploai";
-            xeploai.Width = 125;
+            rank.HeaderText = "Rank";
+            rank.MinimumWidth = 6;
+            rank.Name = "rank";
+            rank.Resizable = DataGridViewTriState.True;
+            rank.SortMode = DataGridViewColumnSortMode.NotSortable;
+            rank.Width = 125;
             // 
             // Del
             // 
@@ -254,21 +269,11 @@
             Del.ToolTipText = "Del";
             Del.Width = 125;
             // 
-            // bt_back
-            // 
-            bt_back.Location = new Point(3, 0);
-            bt_back.Name = "bt_back";
-            bt_back.Size = new Size(48, 29);
-            bt_back.TabIndex = 21;
-            bt_back.Text = "Back\r\n\r\n";
-            bt_back.UseVisualStyleBackColor = true;
-            bt_back.Click += bt_back_Click_1;
-            // 
             // Project5
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1166, 450);
             Controls.Add(dataGridView1);
             Controls.Add(user);
             Controls.Add(bt_back);
@@ -289,8 +294,6 @@
         private Label diem1;
         private Label label2;
         private Label label1;
-        private TextBox save;
-        private TextBox delete;
         private TextBox textBox5;
         private TextBox mon2;
         private TextBox mon1;
@@ -298,15 +301,27 @@
         private TextBox hovaten;
         private ComboBox GioiTinh;
         private DataGridView dataGridView1;
+
+        private Button bt_back;
+        private Label gender;
+        private Label Fname;
+        private TextBox allname;
+        private ComboBox MorFM;
+        private Label point3;
+        private Label point2;
+        private Label point1;
+        private TextBox Pj5;
+        private TextBox Pj2;
+        private TextBox Pj1;
+        private Button delete;
+        private Button save;
         private DataGridViewTextBoxColumn Number;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn Phai;
         private DataGridViewTextBoxColumn P1;
         private DataGridViewTextBoxColumn P2;
         private DataGridViewTextBoxColumn P3;
-        private DataGridViewComboBoxColumn xeploai;
+        private DataGridViewTextBoxColumn rank;
         private DataGridViewButtonColumn Del;
-
-        private Button bt_back;
     }
 }
