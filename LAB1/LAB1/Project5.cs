@@ -64,30 +64,28 @@ namespace LAB1
         }
 
         private void save_Click(object sender, EventArgs e)
-        {
-            // Lấy giá trị từ các trường nhập liệu
+        {// Lấy giá trị từ các trường nhập liệu
             string fullName = allname.Text.Trim();
             string gender = MorFM.SelectedItem?.ToString();
             string project1ScoreText = Pj1.Text.Trim();
             string project2ScoreText = Pj2.Text.Trim();
             string project3ScoreText = Pj5.Text.Trim();
 
-            // Kiểm tra tính hợp lệ của dữ liệu
             if (string.IsNullOrWhiteSpace(fullName) || string.IsNullOrWhiteSpace(gender) ||
-                string.IsNullOrWhiteSpace(project1ScoreText) || string.IsNullOrWhiteSpace(project2ScoreText) ||
-                string.IsNullOrWhiteSpace(project3ScoreText))
+                string.IsNullOrWhiteSpace(project1ScoreText) || string.IsNullOrWhiteSpace(project2ScoreText) || string.IsNullOrWhiteSpace(project3ScoreText))
             {
+                // Kiểm tra tính hợp lệ của dữ liệu
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Chuyển đổi điểm số từ chuỗi sang số
-            double project1Score = Convert.ToDouble(project1ScoreText);
-            double project2Score = Convert.ToDouble(project2ScoreText);
-            double project3Score = Convert.ToDouble(project3ScoreText);
+            // Chuyển đổi điểm số từ chuỗi sang số và làm tròn đến 1 chữ số thập phân
+            double project1Score = Math.Round(Convert.ToDouble(project1ScoreText), 1);
+            double project2Score = Math.Round(Convert.ToDouble(project2ScoreText), 1);
+            double project3Score = Math.Round(Convert.ToDouble(project3ScoreText), 1);
 
-            // Tính điểm trung bình
-            double averageScore = (project1Score + project2Score + project3Score) / 3;
+            // Tính điểm trung bình và làm tròn đến 1 chữ số thập phân
+            double averageScore = Math.Round((project1Score + project2Score + project3Score) / 3, 1);
 
             // Xác định xếp loại
             string rank;
