@@ -19,14 +19,7 @@ namespace LAB1
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView1.Columns["Phai"].Index && e.RowIndex >= 0)
-            {
-                // Tạo combo box cho giới tính
-                DataGridViewComboBoxCell genderCell = new DataGridViewComboBoxCell();
-                genderCell.Items.Add("Male");
-                genderCell.Items.Add("Female");
-                dataGridView1[e.ColumnIndex, e.RowIndex] = genderCell;
-            }
+            
 
             if (e.RowIndex >= 0)
             {
@@ -98,7 +91,7 @@ namespace LAB1
             else if (averageScore >= 3.5 && project1Score >= 2 && project2Score >= 2 && project3Score >= 2)
                 rank = "Weak";
             else
-                rank = "P";
+                rank = "Poor";
 
             // Thêm dữ liệu vào DataGridView
             int rowIndex = dataGridView1.Rows.Add();
