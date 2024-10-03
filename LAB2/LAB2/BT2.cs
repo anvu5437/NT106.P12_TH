@@ -62,5 +62,12 @@ namespace LAB2
                 txtFileContent.Text = fileContent;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MHChinh mhc = (MHChinh)Application.OpenForms["MHChinh"];
+            mhc.Show();
+            this.Close();
+        }
     }
 }

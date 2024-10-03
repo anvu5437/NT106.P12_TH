@@ -43,12 +43,13 @@
             txtWordCount = new TextBox();
             txtCharacterCount = new TextBox();
             txtFileContent = new RichTextBox();
+            button1 = new Button();
             SuspendLayout();
             // 
             // btnReadFile
             // 
             btnReadFile.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnReadFile.Location = new Point(29, 12);
+            btnReadFile.Location = new Point(89, 12);
             btnReadFile.Name = "btnReadFile";
             btnReadFile.Size = new Size(314, 36);
             btnReadFile.TabIndex = 0;
@@ -180,11 +181,23 @@
             txtFileContent.TabIndex = 14;
             txtFileContent.Text = "";
             // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(2, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(81, 29);
+            button1.TabIndex = 15;
+            button1.Text = "Quay lại";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // BT2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(943, 450);
+            Controls.Add(button1);
             Controls.Add(txtFileContent);
             Controls.Add(txtCharacterCount);
             Controls.Add(txtWordCount);
@@ -223,5 +236,6 @@
         private TextBox txtWordCount;
         private TextBox txtCharacterCount;
         private RichTextBox txtFileContent;
+        private Button button1;
     }
 }

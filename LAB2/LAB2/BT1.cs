@@ -120,5 +120,12 @@ namespace LAB2
             inputForm.Controls.Add(submitButton);
             inputForm.ShowDialog(); // Hiện hộp thoại nhập liệu
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MHChinh mhc = (MHChinh)Application.OpenForms["MHChinh"];
+            mhc.Show();
+            this.Close();
+        }
     }
 }

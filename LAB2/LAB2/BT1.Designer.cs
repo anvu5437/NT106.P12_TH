@@ -31,6 +31,7 @@
             readFile = new Button();
             writeFile = new Button();
             richTextBox1 = new RichTextBox();
+            button1 = new Button();
             SuspendLayout();
             // 
             // readFile
@@ -42,6 +43,7 @@
             readFile.TabIndex = 0;
             readFile.Text = "Đọc File";
             readFile.UseVisualStyleBackColor = true;
+            readFile.Click += readFile_Click;
             // 
             // writeFile
             // 
@@ -53,6 +55,7 @@
             writeFile.Text = "Ghi File";
             writeFile.UseCompatibleTextRendering = true;
             writeFile.UseVisualStyleBackColor = true;
+            writeFile.Click += writeFile_Click;
             // 
             // richTextBox1
             // 
@@ -61,14 +64,24 @@
             richTextBox1.Size = new Size(419, 396);
             richTextBox1.TabIndex = 2;
             richTextBox1.Text = "";
-            this.writeFile.Click += new System.EventHandler(this.writeFile_Click);
-            this.readFile.Click += new System.EventHandler(this.readFile_Click);
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(12, 7);
+            button1.Name = "button1";
+            button1.Size = new Size(81, 29);
+            button1.TabIndex = 3;
+            button1.Text = "Quay lại";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // BT1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(richTextBox1);
             Controls.Add(writeFile);
             Controls.Add(readFile);
@@ -82,5 +95,6 @@
         private Button readFile;
         private Button writeFile;
         private RichTextBox richTextBox1;
+        private Button button1;
     }
 }
