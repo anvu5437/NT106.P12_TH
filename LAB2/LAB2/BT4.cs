@@ -140,7 +140,7 @@ namespace LAB2
             public float Score3 { get; set; }
         }
 
-        private void DisplayCurrentStudent() 
+        private void DisplayCurrentStudent()
         {
             if (students.Count > 0 && currentIndex >= 0 && currentIndex < students.Count)
             {
@@ -231,6 +231,13 @@ namespace LAB2
         private void name_rs_tb_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            MHChinh mhc = (MHChinh)Application.OpenForms["MHChinh"];
+            mhc.Show();
+            this.Close();
         }
     }
 }

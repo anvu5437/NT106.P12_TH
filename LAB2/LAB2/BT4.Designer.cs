@@ -33,7 +33,6 @@
             name_tb = new TextBox();
             id_tb = new TextBox();
             phone_tb = new TextBox();
-            bk_bt = new Button();
             crs3_tb = new TextBox();
             crs2_tb = new TextBox();
             crs1_tb = new TextBox();
@@ -63,6 +62,7 @@
             richTextBox1 = new RichTextBox();
             dl_bt = new Button();
             pagenums_tb = new TextBox();
+            button1 = new Button();
             SuspendLayout();
             // 
             // wr_bt
@@ -109,17 +109,6 @@
             phone_tb.Name = "phone_tb";
             phone_tb.Size = new Size(167, 27);
             phone_tb.TabIndex = 4;
-            // 
-            // bk_bt
-            // 
-            bk_bt.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bk_bt.Location = new Point(12, 12);
-            bk_bt.Name = "bk_bt";
-            bk_bt.Size = new Size(50, 26);
-            bk_bt.TabIndex = 5;
-            bk_bt.Text = "Back";
-            bk_bt.UseVisualStyleBackColor = true;
-            bk_bt.Click += bk_bt_Click;
             // 
             // crs3_tb
             // 
@@ -383,11 +372,23 @@
             pagenums_tb.TabIndex = 36;
             pagenums_tb.TextChanged += textBox2_TextChanged;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(11, 9);
+            button1.Name = "button1";
+            button1.Size = new Size(81, 29);
+            button1.TabIndex = 39;
+            button1.Text = "Quay lại";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_2;
+            // 
             // BT4
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(961, 499);
+            Controls.Add(button1);
             Controls.Add(dl_bt);
             Controls.Add(textBox2);
             Controls.Add(pagenums_tb);
@@ -417,7 +418,6 @@
             Controls.Add(crs2_tb);
             Controls.Add(crs1_tb);
             Controls.Add(richTextBox1);
-            Controls.Add(bk_bt);
             Controls.Add(phone_tb);
             Controls.Add(id_tb);
             Controls.Add(name_tb);
@@ -437,7 +437,6 @@
         private TextBox name_tb;
         private TextBox id_tb;
         private TextBox phone_tb;
-        private Button bk_bt;
         private TextBox crs3_tb;
         private TextBox crs2_tb;
         private TextBox crs1_tb;
@@ -467,5 +466,6 @@
         private RichTextBox richTextBox1;
         private Button dl_bt;
         private TextBox pagenums_tb;
+        private Button button1;
     }
 }

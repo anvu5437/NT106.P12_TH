@@ -32,6 +32,7 @@
             txtInput = new RichTextBox();
             txtOutput = new RichTextBox();
             btnWrite = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // btnRead
@@ -47,9 +48,9 @@
             // 
             // txtInput
             // 
-            txtInput.Location = new Point(12, 12);
+            txtInput.Location = new Point(12, 41);
             txtInput.Name = "txtInput";
-            txtInput.Size = new Size(306, 390);
+            txtInput.Size = new Size(306, 361);
             txtInput.TabIndex = 2;
             txtInput.Text = "";
             // 
@@ -73,11 +74,23 @@
             btnWrite.UseVisualStyleBackColor = true;
             btnWrite.Click += btnWrite_Click;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(12, 6);
+            button1.Name = "button1";
+            button1.Size = new Size(81, 29);
+            button1.TabIndex = 16;
+            button1.Text = "Quay lại";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // BT3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(682, 450);
+            Controls.Add(button1);
             Controls.Add(btnWrite);
             Controls.Add(txtOutput);
             Controls.Add(txtInput);
@@ -93,5 +106,6 @@
         private RichTextBox txtInput;
         private RichTextBox txtOutput;
         private Button btnWrite;
+        private Button button1;
     }
 }

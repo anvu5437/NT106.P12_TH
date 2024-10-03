@@ -101,5 +101,12 @@ namespace LAB2
                 MessageBox.Show("Chỉ hỗ trợ file văn bản và hình ảnh!");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MHChinh mhc = (MHChinh)Application.OpenForms["MHChinh"];
+            mhc.Show();
+            this.Close();
+        }
     }
 }
