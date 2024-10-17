@@ -28,46 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.UDPserverbtn = new System.Windows.Forms.Button();
-            this.UDPClientbtn = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            UDPserverbtn = new Button();
+            UDPClientbtn = new Button();
+            Backbtn = new Button();
+            SuspendLayout();
             // 
             // UDPserverbtn
             // 
-            this.UDPserverbtn.Location = new System.Drawing.Point(41, 24);
-            this.UDPserverbtn.Name = "UDPserverbtn";
-            this.UDPserverbtn.Size = new System.Drawing.Size(125, 37);
-            this.UDPserverbtn.TabIndex = 0;
-            this.UDPserverbtn.Text = "UDP Server";
-            this.UDPserverbtn.UseVisualStyleBackColor = true;
-            this.UDPserverbtn.Click += new System.EventHandler(this.UDPserverbtn_Click);
+            UDPserverbtn.Location = new Point(41, 51);
+            UDPserverbtn.Margin = new Padding(3, 4, 3, 4);
+            UDPserverbtn.Name = "UDPserverbtn";
+            UDPserverbtn.Size = new Size(125, 46);
+            UDPserverbtn.TabIndex = 0;
+            UDPserverbtn.Text = "UDP Server";
+            UDPserverbtn.UseVisualStyleBackColor = true;
+            UDPserverbtn.Click += UDPserverbtn_Click;
             // 
             // UDPClientbtn
             // 
-            this.UDPClientbtn.Location = new System.Drawing.Point(329, 24);
-            this.UDPClientbtn.Name = "UDPClientbtn";
-            this.UDPClientbtn.Size = new System.Drawing.Size(125, 37);
-            this.UDPClientbtn.TabIndex = 1;
-            this.UDPClientbtn.Text = "UDP Client";
-            this.UDPClientbtn.UseVisualStyleBackColor = true;
-            this.UDPClientbtn.Click += new System.EventHandler(this.UDPClientbtn_Click);
+            UDPClientbtn.Location = new Point(331, 51);
+            UDPClientbtn.Margin = new Padding(3, 4, 3, 4);
+            UDPClientbtn.Name = "UDPClientbtn";
+            UDPClientbtn.Size = new Size(125, 46);
+            UDPClientbtn.TabIndex = 1;
+            UDPClientbtn.Text = "UDP Client";
+            UDPClientbtn.UseVisualStyleBackColor = true;
+            UDPClientbtn.Click += UDPClientbtn_Click;
+            // 
+            // Backbtn
+            // 
+            Backbtn.Location = new Point(12, 12);
+            Backbtn.Name = "Backbtn";
+            Backbtn.Size = new Size(76, 32);
+            Backbtn.TabIndex = 2;
+            Backbtn.Text = "Back";
+            Backbtn.UseVisualStyleBackColor = true;
+            Backbtn.Click += Backbtn_Click;
             // 
             // BT1_Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 88);
-            this.Controls.Add(this.UDPClientbtn);
-            this.Controls.Add(this.UDPserverbtn);
-            this.Name = "BT1_Dashboard";
-            this.Text = "BT1_Dashboard";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(534, 110);
+            Controls.Add(Backbtn);
+            Controls.Add(UDPClientbtn);
+            Controls.Add(UDPserverbtn);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "BT1_Dashboard";
+            Text = "BT1_Dashboard";
+            ResumeLayout(false);
         }
 
         #endregion
 
         private System.Windows.Forms.Button UDPserverbtn;
         private System.Windows.Forms.Button UDPClientbtn;
+        private Button Backbtn;
     }
 }
