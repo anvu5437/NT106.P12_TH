@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LAB3
 {
-    public partial class BT1_Server : Form
+    public partial class BT4_Server : Form
     {
-        public BT1_Server()
+        public BT4_Server()
         {
             InitializeComponent();
         }

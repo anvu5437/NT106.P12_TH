@@ -1,6 +1,6 @@
 ﻿namespace LAB3
 {
-    partial class BT1_Client
+    partial class BT3_Client
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "BT1_Client";
+            this.Text = "BT3_Client";
         }
 
         #endregion
