@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,6 +28,13 @@ namespace LAB3
         {
             BT1_Client clientForm = new BT1_Client();
             clientForm.Show();
+        }
+
+        private void Backbtn_Click(object sender, EventArgs e)
+        {
+            mainMenu mhc = (mainMenu)Application.OpenForms["mainMenu"];
+            mhc.Show();
+            this.Close();
         }
     }
 }
