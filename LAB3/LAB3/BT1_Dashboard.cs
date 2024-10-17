@@ -16,5 +16,17 @@ namespace LAB3
         {
             InitializeComponent();
         }
+
+        private void UDPserverbtn_Click(object sender, EventArgs e)
+        {
+            BT1_Server serverForm = new BT1_Server();
+            serverForm.Show();
+        }
+
+        private void UDPClientbtn_Click(object sender, EventArgs e)
+        {
+            BT1_Client clientForm = new BT1_Client();
+            clientForm.Show();
+        }
     }
 }
