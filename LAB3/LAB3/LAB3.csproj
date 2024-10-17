@@ -45,11 +45,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BT1.cs">
+    <Compile Include="BT1_Client.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BT1.Designer.cs">
-      <DependentUpon>BT1.cs</DependentUpon>
+    <Compile Include="BT1_Client.Designer.cs">
+      <DependentUpon>BT1_Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BT1_Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BT1_Dashboard.Designer.cs">
+      <DependentUpon>BT1_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BT1_Server.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BT1_Server.Designer.cs">
+      <DependentUpon>BT1_Server.cs</DependentUpon>
     </Compile>
     <Compile Include="BT3.cs">
       <SubType>Form</SubType>
@@ -69,11 +81,28 @@
     <Compile Include="BT5.Designer.cs">
       <DependentUpon>BT5.cs</DependentUpon>
     </Compile>
+    <Compile Include="mainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainMenu.Designer.cs">
+      <DependentUpon>mainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BT1_Client.resx">
+      <DependentUpon>BT1_Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BT1_Dashboard.resx">
+      <DependentUpon>BT1_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BT1_Server.resx">
+      <DependentUpon>BT1_Server.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

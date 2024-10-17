@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LAB3
 {
-    public partial class BT1 : Form
+    public partial class mainMenu : Form
     {
-        public BT1()
+        public mainMenu()
         {
             InitializeComponent();
         }
