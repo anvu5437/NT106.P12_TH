@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LAB3
@@ -15,6 +8,18 @@ namespace LAB3
         public BT4_Dashboard()
         {
             InitializeComponent();
+        }
+
+        private void btnServer_Click(object sender, EventArgs e)
+        {
+            BT4_Server serverForm = new BT4_Server();
+            serverForm.Show();
+        }
+
+        private void btnClient_Click(object sender, EventArgs e)
+        {
+            BT4_Client clientForm = new BT4_Client();
+            clientForm.Show();
         }
     }
 }
