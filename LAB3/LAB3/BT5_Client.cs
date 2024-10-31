@@ -18,6 +18,7 @@ namespace LAB3
             CreateSeatButtons();
         }
 
+        //Tạo nút ghế
         private void CreateSeatButtons()
         {
             for (int i = 1; i <= 25; i++) // Giả sử có 25 ghế
@@ -36,70 +37,7 @@ namespace LAB3
             }
         }
 
-        private void OnDataReceivedFromServer(string message)
-        {
-            var parts = message.Split(';');
-            if (parts.Length == 4 && parts[0] == "Cập nhật")
-            {
-                int seatNumber = int.Parse(parts[1]);
-                string clientName = parts[2];
-                int seatStatus = int.Parse(parts[3]); // Trạng thái ghế từ server (0 hoặc 1)
-
-                // Tìm button tương ứng với số ghế
-                Button seatButton = flowLayoutPanelSeats.Controls[seatNumber - 1] as Button;
-
-                // Cập nhật màu ghế dựa trên trạng thái
-                if (seatStatus == 0)
-                {
-                    seatButton.BackColor = Color.Green;
-                    seatButton.Text = "";
-                }
-                else if (seatStatus == 1)
-                {
-                    seatButton.BackColor = Color.Red;
-                    seatButton.Text = clientName;
-                }
-            }
-        }
-
-
-        private void OnDataReceived(IAsyncResult ar)
-        {
-            try
-            {
-                byte[] buffer = (byte[])ar.AsyncState;
-                int bytesRead = stream.EndRead(ar);
-
-                if (bytesRead > 0)
-                {
-                    string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                    Invoke((Action)(() => HandleServerMessage(message)));
-                    Invoke((Action)(() => OnDataReceivedFromServer(message)));
-                }
-                BeginRead();
-            }
-            catch (ObjectDisposedException)
-            {
-                MessageBox.Show("Kết nối với server đã bị ngắt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi nhận dữ liệu từ server: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void BeginRead()
-        {
-            try
-            {
-                byte[] buffer = new byte[1024];
-                stream.BeginRead(buffer, 0, buffer.Length, new AsyncCallback(OnDataReceived), buffer);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi bắt đầu đọc dữ liệu: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+        //Kết nối với Server
         private void ConnectToServer(string ip, int port)
         {
             try
@@ -136,7 +74,98 @@ namespace LAB3
             }
         }
 
-        //
+        //Nhận Dữ Liệu từ Server
+        private void BeginRead()
+        {
+            try
+            {
+                byte[] buffer = new byte[1024];
+                stream.BeginRead(buffer, 0, buffer.Length, new AsyncCallback(OnDataReceived), buffer);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi bắt đầu đọc dữ liệu: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void OnDataReceived(IAsyncResult ar)
+        {
+            try
+            {
+                byte[] buffer = (byte[])ar.AsyncState;
+                int bytesRead = stream.EndRead(ar);
+
+                if (bytesRead > 0)
+                {
+                    string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+                    Invoke((Action)(() => HandleServerMessage(message)));
+                    Invoke((Action)(() => OnDataReceivedFromServer(message)));
+                }
+                BeginRead();
+            }
+            catch (ObjectDisposedException)
+            {
+                MessageBox.Show("Kết nối với server đã bị ngắt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi nhận dữ liệu từ server: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void HandleServerMessage(string message)
+        {
+            var parts = message.Split(';');
+
+            if (parts[0] == "Cập nhật")
+            {
+                int seatNumber = int.Parse(parts[1]);
+                string clientName = parts[2];
+                UpdateSeatStatus(seatNumber, "Đỏ", clientName);
+            }
+            else if (message == "Ghế đã được đặt!")
+            {
+                MessageBox.Show("Ghế đã được đặt! Vui lòng chọn ghế khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (parts[0] == "Trạng thái ghế")
+            {
+                for (int i = 1; i < parts.Length; i += 3)
+                {
+                    int seatNumber = int.Parse(parts[i]);
+                    string seatStatus = parts[i + 1];
+                    string clientName = parts[i + 2]; // Lấy tên người đã đặt
+                    UpdateSeatStatus(seatNumber, seatStatus, clientName); // Cập nhật trạng thái cho từng ghế
+                }
+            }
+        }
+
+        private void OnDataReceivedFromServer(string message)
+        {
+            var parts = message.Split(';');
+            if (parts.Length == 4 && parts[0] == "Cập nhật")
+            {
+                int seatNumber = int.Parse(parts[1]);
+                string clientName = parts[2];
+                int seatStatus = int.Parse(parts[3]); // Trạng thái ghế từ server (0 hoặc 1)
+
+                // Tìm button tương ứng với số ghế
+                Button seatButton = flowLayoutPanelSeats.Controls[seatNumber - 1] as Button;
+
+                // Cập nhật màu ghế dựa trên trạng thái
+                if (seatStatus == 0)
+                {
+                    seatButton.BackColor = Color.Green;
+                    seatButton.Text = "";
+                }
+                else if (seatStatus == 1)
+                {
+                    seatButton.BackColor = Color.Red;
+                    seatButton.Text = clientName;
+                }
+            }
+        }
+
+        //Cập nhật trạng thái ghế
         private void UpdateSeatStatus(int seatNumber, string seatStatus, string clientName = "")
         {
             if (InvokeRequired)
@@ -166,34 +195,34 @@ namespace LAB3
             }
         }
 
-        //Xử lý thông điệp từ server
-        private void HandleServerMessage(string message)
+        //Sự kiện nhấn nút đặt và chọn ghế
+        private void SeatButton_Click(object sender, EventArgs e)
         {
-            var parts = message.Split(';');
-
-            if (parts[0] == "Cập nhật")
+            if (sender is Button seatButton)
             {
-                int seatNumber = int.Parse(parts[1]);
-                string clientName = parts[2];
-                UpdateSeatStatus(seatNumber, "Đỏ", clientName);
-            }
-            else if (message == "Ghế đã được đặt!")
-            {
-                MessageBox.Show("Ghế đã được đặt! Vui lòng chọn ghế khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (parts[0] == "Trạng thái ghế")
-            {
-                for (int i = 1; i < parts.Length; i += 3)
+                // Nếu ghế đã đặt (màu đỏ), hiển thị thông báo và không cho phép chọn
+                if (seatButton.BackColor == Color.Red)
                 {
-                    int seatNumber = int.Parse(parts[i]);
-                    string seatStatus = parts[i + 1];
-                    string clientName = parts[i + 2]; // Lấy tên người đã đặt
-                    UpdateSeatStatus(seatNumber, seatStatus, clientName); // Cập nhật trạng thái cho từng ghế
+                    MessageBox.Show("Ghế này đã được đặt. Vui lòng chọn ghế khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
+
+                // Đặt lại màu ghế trước đó nếu đã chọn ghế
+                if (selectedSeatNumber != -1)
+                {
+                    var previousSeatButton = flowLayoutPanelSeats.Controls[selectedSeatNumber - 1] as Button;
+                    previousSeatButton.BackColor = Color.Green; // Đổi màu ghế về xanh
+                    previousSeatButton.Text = previousSeatButton.Tag.ToString(); // Hiển thị lại số ghế
+                }
+
+                // Cập nhật số ghế được chọn
+                selectedSeatNumber = (int)seatButton.Tag; // Lấy số ghế từ thuộc tính Tag
+                seatButton.BackColor = Color.Yellow; // Đổi màu ghế thành vàng khi chọn
+                seatButton.Text = ""; // Ẩn số ghế khi chọn
+                MessageBox.Show($"Bạn đã chọn ghế số {selectedSeatNumber}.", "Thông báo", MessageBoxButtons.OK);
             }
         }
 
-        //Sự kiện nhấn nút đặt ghế
         private void BtnReserve_Click(object sender, EventArgs e)
         {
             if (selectedSeatNumber != -1 && selectedSeatNumber <= 25)
@@ -224,36 +253,7 @@ namespace LAB3
             }
         }
 
-        // Sự kiến nhấn chọn ghế
-        private void SeatButton_Click(object sender, EventArgs e)
-        {
-            if (sender is Button seatButton)
-            {
-                // Nếu ghế đã đặt (màu đỏ), hiển thị thông báo và không cho phép chọn
-                if (seatButton.BackColor == Color.Red)
-                {
-                    MessageBox.Show("Ghế này đã được đặt. Vui lòng chọn ghế khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                // Đặt lại màu ghế trước đó nếu đã chọn ghế
-                if (selectedSeatNumber != -1)
-                {
-                    var previousSeatButton = flowLayoutPanelSeats.Controls[selectedSeatNumber - 1] as Button;
-                    previousSeatButton.BackColor = Color.Green; // Đổi màu ghế về xanh
-                    previousSeatButton.Text = previousSeatButton.Tag.ToString(); // Hiển thị lại số ghế
-                }
-
-                // Cập nhật số ghế được chọn
-                selectedSeatNumber = (int)seatButton.Tag; // Lấy số ghế từ thuộc tính Tag
-                seatButton.BackColor = Color.Yellow; // Đổi màu ghế thành vàng khi chọn
-                seatButton.Text = ""; // Ẩn số ghế khi chọn
-                MessageBox.Show($"Bạn đã chọn ghế số {selectedSeatNumber}.", "Thông báo", MessageBoxButtons.OK);
-            }
-        }
-
-
-        //Hàm xử lý ngắt kết nối client
+        //Hàm xử lý ngắt kết nối và đóng form client
         private void DisconnectClient()
         {
             try
@@ -281,7 +281,6 @@ namespace LAB3
             }
         }
 
-        //Hàm xử lý đóng form client
         private void ClientForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Xác nhận người dùng có thực sự muốn ngắt kết nối client không
