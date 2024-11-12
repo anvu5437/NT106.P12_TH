@@ -12,7 +12,7 @@ namespace LAB4
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new BT5());
+            Application.Run(new MainMenu());
 
         }
     }
