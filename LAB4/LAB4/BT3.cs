@@ -85,7 +85,7 @@ namespace LAB4
                 }
             }
 
-            MessageBox.Show("Tải tài nguyên thành công!", "Thông báo");
+            MessageBox.Show("Tải tài nguyên hoàn tất!", "Thông báo");
         }
 
         // Hàm tải file từ URL và lưu vào thư mục chỉ định
