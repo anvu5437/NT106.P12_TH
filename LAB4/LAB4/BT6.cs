@@ -16,5 +16,10 @@ namespace LAB4
         {
             InitializeComponent();
         }
+
+        private void BT6_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

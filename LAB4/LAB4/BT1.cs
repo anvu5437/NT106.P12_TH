@@ -51,5 +51,10 @@ namespace LAB4
             if (e.KeyCode == Keys.Enter)
                 btn_Get_Click(this, new EventArgs());
         }
+
+        private void BT1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

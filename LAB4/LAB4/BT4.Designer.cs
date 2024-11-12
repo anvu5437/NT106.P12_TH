@@ -121,6 +121,7 @@
             Margin = new Padding(4, 5, 4, 5);
             Name = "BT4";
             Text = "API Login";
+            FormClosing += BT4_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

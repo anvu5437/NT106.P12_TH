@@ -28,56 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txt_Url = new System.Windows.Forms.TextBox();
-            this.btn_Get = new System.Windows.Forms.Button();
-            this.rtxt_HTML = new System.Windows.Forms.RichTextBox();
-            this.SuspendLayout();
+            txt_Url = new TextBox();
+            btn_Get = new Button();
+            rtxt_HTML = new RichTextBox();
+            SuspendLayout();
             // 
             // txt_Url
             // 
-            this.txt_Url.Location = new System.Drawing.Point(13, 14);
-            this.txt_Url.Name = "txt_Url";
-            this.txt_Url.Size = new System.Drawing.Size(378, 20);
-            this.txt_Url.TabIndex = 0;
-            this.txt_Url.Text = "https://www.uit.edu.vn/";
-            this.txt_Url.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Url_KeyDown);
+            txt_Url.Location = new Point(17, 22);
+            txt_Url.Margin = new Padding(4, 5, 4, 5);
+            txt_Url.Name = "txt_Url";
+            txt_Url.Size = new Size(503, 27);
+            txt_Url.TabIndex = 0;
+            txt_Url.Text = "https://www.uit.edu.vn/";
+            txt_Url.KeyDown += txt_Url_KeyDown;
             // 
             // btn_Get
             // 
-            this.btn_Get.Location = new System.Drawing.Point(397, 13);
-            this.btn_Get.Name = "btn_Get";
-            this.btn_Get.Size = new System.Drawing.Size(75, 23);
-            this.btn_Get.TabIndex = 1;
-            this.btn_Get.Text = "GET";
-            this.btn_Get.UseVisualStyleBackColor = true;
-            this.btn_Get.Click += new System.EventHandler(this.btn_Get_Click);
+            btn_Get.Location = new Point(529, 20);
+            btn_Get.Margin = new Padding(4, 5, 4, 5);
+            btn_Get.Name = "btn_Get";
+            btn_Get.Size = new Size(100, 35);
+            btn_Get.TabIndex = 1;
+            btn_Get.Text = "GET";
+            btn_Get.UseVisualStyleBackColor = true;
+            btn_Get.Click += btn_Get_Click;
             // 
             // rtxt_HTML
             // 
-            this.rtxt_HTML.BackColor = System.Drawing.Color.White;
-            this.rtxt_HTML.Location = new System.Drawing.Point(13, 41);
-            this.rtxt_HTML.Name = "rtxt_HTML";
-            this.rtxt_HTML.ReadOnly = true;
-            this.rtxt_HTML.Size = new System.Drawing.Size(459, 308);
-            this.rtxt_HTML.TabIndex = 2;
-            this.rtxt_HTML.Text = "";
+            rtxt_HTML.BackColor = Color.White;
+            rtxt_HTML.Location = new Point(17, 63);
+            rtxt_HTML.Margin = new Padding(4, 5, 4, 5);
+            rtxt_HTML.Name = "rtxt_HTML";
+            rtxt_HTML.ReadOnly = true;
+            rtxt_HTML.Size = new Size(611, 472);
+            rtxt_HTML.TabIndex = 2;
+            rtxt_HTML.Text = "";
             // 
-            // Bai01
+            // BT1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 361);
-            this.Controls.Add(this.rtxt_HTML);
-            this.Controls.Add(this.btn_Get);
-            this.Controls.Add(this.txt_Url);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "Bai01";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bai01";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(645, 555);
+            Controls.Add(rtxt_HTML);
+            Controls.Add(btn_Get);
+            Controls.Add(txt_Url);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(4, 5, 4, 5);
+            MaximizeBox = false;
+            Name = "BT1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Bai01";
+            FormClosing += BT1_FormClosing;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -15,75 +15,70 @@
 
         private void InitializeComponent()
         {
-            this.txtToken = new System.Windows.Forms.TextBox();
-            this.btnGetUserInfo = new System.Windows.Forms.Button();
-            this.txtResult = new System.Windows.Forms.TextBox();
-            this.lblToken = new System.Windows.Forms.Label();
-            this.lblResult = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-
+            txtToken = new TextBox();
+            btnGetUserInfo = new Button();
+            txtResult = new TextBox();
+            lblToken = new Label();
+            lblResult = new Label();
+            SuspendLayout();
             // 
             // txtToken
             // 
-            this.txtToken.Location = new System.Drawing.Point(12, 32);
-            this.txtToken.Name = "txtToken";
-            this.txtToken.Size = new System.Drawing.Size(260, 20);
-            this.txtToken.TabIndex = 0;
-
+            txtToken.Location = new Point(12, 32);
+            txtToken.Name = "txtToken";
+            txtToken.Size = new Size(260, 27);
+            txtToken.TabIndex = 0;
             // 
             // btnGetUserInfo
             // 
-            this.btnGetUserInfo.Location = new System.Drawing.Point(12, 58);
-            this.btnGetUserInfo.Name = "btnGetUserInfo";
-            this.btnGetUserInfo.Size = new System.Drawing.Size(260, 30);
-            this.btnGetUserInfo.TabIndex = 1;
-            this.btnGetUserInfo.Text = "Lấy thông tin người dùng";
-            this.btnGetUserInfo.UseVisualStyleBackColor = true;
-            this.btnGetUserInfo.Click += new System.EventHandler(this.btnGetUserInfo_Click);
-
+            btnGetUserInfo.Location = new Point(12, 58);
+            btnGetUserInfo.Name = "btnGetUserInfo";
+            btnGetUserInfo.Size = new Size(260, 30);
+            btnGetUserInfo.TabIndex = 1;
+            btnGetUserInfo.Text = "Lấy thông tin người dùng";
+            btnGetUserInfo.UseVisualStyleBackColor = true;
+            btnGetUserInfo.Click += btnGetUserInfo_Click;
             // 
             // txtResult
             // 
-            this.txtResult.Location = new System.Drawing.Point(12, 108);
-            this.txtResult.Multiline = true;
-            this.txtResult.Name = "txtResult";
-            this.txtResult.Size = new System.Drawing.Size(260, 120);
-            this.txtResult.TabIndex = 2;
-            this.txtResult.ReadOnly = true;
-
+            txtResult.Location = new Point(12, 108);
+            txtResult.Multiline = true;
+            txtResult.Name = "txtResult";
+            txtResult.ReadOnly = true;
+            txtResult.Size = new Size(260, 120);
+            txtResult.TabIndex = 2;
             // 
             // lblToken
             // 
-            this.lblToken.AutoSize = true;
-            this.lblToken.Location = new System.Drawing.Point(9, 16);
-            this.lblToken.Name = "lblToken";
-            this.lblToken.Size = new System.Drawing.Size(77, 13);
-            this.lblToken.TabIndex = 3;
-            this.lblToken.Text = "Nhập JWT Token:";
-
+            lblToken.AutoSize = true;
+            lblToken.Location = new Point(9, 16);
+            lblToken.Name = "lblToken";
+            lblToken.Size = new Size(122, 20);
+            lblToken.TabIndex = 3;
+            lblToken.Text = "Nhập JWT Token:";
             // 
             // lblResult
             // 
-            this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(9, 92);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(81, 13);
-            this.lblResult.TabIndex = 4;
-            this.lblResult.Text = "Thông tin người dùng:";
-
+            lblResult.AutoSize = true;
+            lblResult.Location = new Point(9, 92);
+            lblResult.Name = "lblResult";
+            lblResult.Size = new Size(156, 20);
+            lblResult.TabIndex = 4;
+            lblResult.Text = "Thông tin người dùng:";
             // 
             // BT5
             // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.lblResult);
-            this.Controls.Add(this.lblToken);
-            this.Controls.Add(this.txtResult);
-            this.Controls.Add(this.btnGetUserInfo);
-            this.Controls.Add(this.txtToken);
-            this.Name = "BT5";
-            this.Text = "Thông tin người dùng";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            ClientSize = new Size(284, 261);
+            Controls.Add(lblResult);
+            Controls.Add(lblToken);
+            Controls.Add(txtResult);
+            Controls.Add(btnGetUserInfo);
+            Controls.Add(txtToken);
+            Name = "BT5";
+            Text = "Thông tin người dùng";
+            FormClosing += BT5_FormClosing;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         private System.Windows.Forms.TextBox txtToken;

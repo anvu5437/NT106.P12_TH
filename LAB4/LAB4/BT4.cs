@@ -55,5 +55,10 @@ namespace LAB4
                 }
             }
         }
+
+        private void BT4_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

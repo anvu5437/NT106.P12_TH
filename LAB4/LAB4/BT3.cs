@@ -35,7 +35,7 @@ namespace LAB4
         //Dong form
         private void BT3_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            Application.Exit();
         }
 
         private async void dlFile_bt_Click(object sender, EventArgs e)
