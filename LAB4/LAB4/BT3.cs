@@ -35,7 +35,7 @@ namespace LAB4
         //Dong form
         private void BT3_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            Application.Exit();
         }
 
         private async void dlFile_bt_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace LAB4
                 }
             }
 
-            MessageBox.Show("Tải tài nguyên thành công!", "Thông báo");
+            MessageBox.Show("Tải tài nguyên hoàn tất!", "Thông báo");
         }
 
         // Hàm tải file từ URL và lưu vào thư mục chỉ định

@@ -77,6 +77,7 @@
             Controls.Add(WebURL);
             Name = "BT2";
             Text = "BT2";
+            FormClosing += BT2_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }
