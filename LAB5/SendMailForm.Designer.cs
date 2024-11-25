@@ -1,15 +1,8 @@
-﻿namespace LAB5
+﻿namespace EmailClient
 {
-    partial class SendMailForm
+    partial class FormSendEmail
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.TextBox txtTo;
-        private System.Windows.Forms.TextBox txtSubject;
-        private System.Windows.Forms.TextBox txtBody;
-        private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.Button btnBrowse;
-        private System.Windows.Forms.Label lblAttachment;
-        private string attachmentPath;
 
         protected override void Dispose(bool disposing)
         {
@@ -22,80 +15,80 @@
 
         private void InitializeComponent()
         {
-            this.txtTo = new System.Windows.Forms.TextBox();
+            this.txtToEmail = new System.Windows.Forms.TextBox();
             this.txtSubject = new System.Windows.Forms.TextBox();
             this.txtBody = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
-            this.lblAttachment = new System.Windows.Forms.Label();
+            this.txtAttachment = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // txtTo
-            // 
-            this.txtTo.Location = new System.Drawing.Point(12, 12);
-            this.txtTo.Name = "txtTo";
-            this.txtTo.Size = new System.Drawing.Size(260, 20);
-            this.txtTo.TabIndex = 0;
-            this.txtTo.Text = "To";
-            // 
+
+            // txtToEmail
+            this.txtToEmail.Location = new System.Drawing.Point(12, 12);
+            this.txtToEmail.Name = "txtToEmail";
+            this.txtToEmail.Size = new System.Drawing.Size(300, 22);
+            this.txtToEmail.TabIndex = 0;
+            this.txtToEmail.PlaceholderText = "Email người nhận";
+
             // txtSubject
-            // 
-            this.txtSubject.Location = new System.Drawing.Point(12, 38);
+            this.txtSubject.Location = new System.Drawing.Point(12, 50);
             this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new System.Drawing.Size(260, 20);
+            this.txtSubject.Size = new System.Drawing.Size(400, 22);
             this.txtSubject.TabIndex = 1;
-            this.txtSubject.Text = "Subject";
-            // 
+            this.txtSubject.PlaceholderText = "Chủ đề";
+
             // txtBody
-            // 
-            this.txtBody.Location = new System.Drawing.Point(12, 64);
+            this.txtBody.Location = new System.Drawing.Point(12, 90);
             this.txtBody.Multiline = true;
             this.txtBody.Name = "txtBody";
-            this.txtBody.Size = new System.Drawing.Size(260, 100);
+            this.txtBody.Size = new System.Drawing.Size(400, 150);
             this.txtBody.TabIndex = 2;
-            this.txtBody.Text = "Body";
-            // 
+            this.txtBody.PlaceholderText = "Nội dung email";
+
             // btnSend
-            // 
-            this.btnSend.Location = new System.Drawing.Point(197, 170);
+            this.btnSend.Location = new System.Drawing.Point(12, 310);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(75, 23);
             this.btnSend.TabIndex = 3;
-            this.btnSend.Text = "Send";
+            this.btnSend.Text = "Gửi";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
-            // 
+
             // btnBrowse
-            // 
-            this.btnBrowse.Location = new System.Drawing.Point(12, 170);
+            this.btnBrowse.Location = new System.Drawing.Point(330, 260);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(75, 23);
             this.btnBrowse.TabIndex = 4;
-            this.btnBrowse.Text = "Attach File";
+            this.btnBrowse.Text = "Chọn tệp";
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
-            // 
-            // lblAttachment
-            // 
-            this.lblAttachment.AutoSize = true;
-            this.lblAttachment.Location = new System.Drawing.Point(93, 175);
-            this.lblAttachment.Name = "lblAttachment";
-            this.lblAttachment.Size = new System.Drawing.Size(0, 13);
-            this.lblAttachment.TabIndex = 5;
-            // 
-            // SendMailForm
-            // 
-            this.ClientSize = new System.Drawing.Size(284, 211);
-            this.Controls.Add(this.lblAttachment);
+
+            // txtAttachment
+            this.txtAttachment.Location = new System.Drawing.Point(12, 260);
+            this.txtAttachment.Name = "txtAttachment";
+            this.txtAttachment.Size = new System.Drawing.Size(300, 22);
+            this.txtAttachment.TabIndex = 5;
+            this.txtAttachment.PlaceholderText = "Tệp đính kèm";
+
+            // FormSendEmail
+            this.ClientSize = new System.Drawing.Size(450, 350);
+            this.Controls.Add(this.txtAttachment);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtBody);
             this.Controls.Add(this.txtSubject);
-            this.Controls.Add(this.txtTo);
-            this.Name = "SendMailForm";
-            this.Text = "Send Mail";
+            this.Controls.Add(this.txtToEmail);
+            this.Name = "FormSendEmail";
+            this.Text = "Gửi Email";
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.TextBox txtToEmail;
+        private System.Windows.Forms.TextBox txtSubject;
+        private System.Windows.Forms.TextBox txtBody;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.TextBox txtAttachment;
     }
 }

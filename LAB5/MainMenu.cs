@@ -1,3 +1,5 @@
+using EmailClient;
+
 namespace LAB5
 {
     public partial class MainMenu : Form

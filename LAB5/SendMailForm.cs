@@ -1,20 +1,22 @@
-﻿using System;
-using System.Windows.Forms;
-using MailKit.Net.Smtp;
+﻿using MailKit.Net.Smtp;
 using MimeKit;
+using System;
+using System.Windows.Forms;
 
-namespace LAB5
+namespace EmailClient
 {
-    public partial class SendMailForm : Form
+    public partial class FormSendEmail : Form
     {
-        private SmtpClient smtpClient;
-        private string fromEmail;
+        private string _fromEmail;
+        private string _password;
+        private SmtpClient _smtpClient;
 
-        public SendMailForm(SmtpClient smtpClient, string fromEmail)
+        public FormSendEmail(string fromEmail, string password, SmtpClient smtpClient)
         {
             InitializeComponent();
-            this.smtpClient = smtpClient;
-            this.fromEmail = fromEmail;
+            _fromEmail = fromEmail;
+            _password = password;
+            _smtpClient = smtpClient;
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -22,35 +24,32 @@ namespace LAB5
             try
             {
                 var message = new MimeMessage();
-                message.From.Add(new MailboxAddress("Sender Name", fromEmail));
-                message.To.Add(new MailboxAddress("Recipient Name", txtTo.Text));
-
+                message.From.Add(new MailboxAddress(_fromEmail, _fromEmail));
+                message.To.Add(new MailboxAddress("", txtToEmail.Text));
                 message.Subject = txtSubject.Text;
-
-                var bodyBuilder = new BodyBuilder { TextBody = txtBody.Text };
-                if (!string.IsNullOrEmpty(attachmentPath))
+                message.Body = new TextPart("plain")
                 {
-                    bodyBuilder.Attachments.Add(attachmentPath);
-                }
-                message.Body = bodyBuilder.ToMessageBody();
+                    Text = txtBody.Text
+                };
 
-                smtpClient.Send(message);
-                MessageBox.Show("Gửi mail thành công!", "Thông báo");
+                _smtpClient.Send(message);
+                MessageBox.Show("Email đã được gửi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi gửi mail: " + ex.Message, "Thông báo");
+                MessageBox.Show($"Lỗi khi gửi email: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            var openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            using (var openFileDialog = new OpenFileDialog())
             {
-                attachmentPath = openFileDialog.FileName;
-                lblAttachment.Text = "File: " + Path.GetFileName(attachmentPath);
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    txtAttachment.Text = openFileDialog.FileName;
+                }
             }
         }
     }
