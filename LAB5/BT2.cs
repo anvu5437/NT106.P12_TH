@@ -64,7 +64,7 @@ namespace LAB5
                     // Xóa các mục trong ListView trước khi load lại
                     listView1.Items.Clear();
 
-                    // Giới hạn số email hiển thị (tùy chọn, ở đây lấy 10 email gần nhất)
+                    // Giới hạn số email hiển thị (lấy 10 email)
                     int limit = Math.Min(10, inbox.Count);
 
                     for (int i = 0; i < limit; i++)

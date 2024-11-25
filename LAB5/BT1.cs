@@ -46,7 +46,7 @@ namespace LAB5
                 using (var client = new SmtpClient())
                 {
                     client.Connect("smtp.gmail.com", 587, false); // SMTP server của Gmail
-                    client.Authenticate("23520678@gm.uit.edu.vn", "kowc uvrz vbrm fmlv"); // Thay bằng email và app password của bạn
+                    client.Authenticate("23520678@gm.uit.edu.vn", "rhix tfzj wkkk bhsg"); // Thay bằng email và app password của bạn
                     client.Send(message);
                     client.Disconnect(true);
                 }
