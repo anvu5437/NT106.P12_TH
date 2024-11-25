@@ -44,6 +44,7 @@
             label1.Size = new Size(77, 35);
             label1.TabIndex = 0;
             label1.Text = "LAB5";
+            label1.Click += label1_Click;
             // 
             // button1
             // 
@@ -54,6 +55,7 @@
             button1.TabIndex = 1;
             button1.Text = "BT1";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += bt1_btt_Click;
             // 
             // button2
             // 
@@ -64,6 +66,7 @@
             button2.TabIndex = 2;
             button2.Text = "BT4";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += bt4_btt_Click;
             // 
             // button3
             // 
@@ -74,6 +77,7 @@
             button3.TabIndex = 3;
             button3.Text = "BT3";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += bt3_btt_Click;
             // 
             // button4
             // 
@@ -84,6 +88,7 @@
             button4.TabIndex = 4;
             button4.Text = "BT2";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += bt2_btt_Click;
             // 
             // MainMenu
             // 
