@@ -100,7 +100,6 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
-            Enabled = false;
             Name = "MainMenu";
             Text = "LAB5";
             ResumeLayout(false);
